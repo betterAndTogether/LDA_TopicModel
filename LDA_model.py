@@ -98,10 +98,53 @@ def lda_main(topic_save_file):
 
         wf.close()
 
+def lda_model_test():
+
+    train_file = "./data/processed_data/content.txt"
+    save_file = "./data/processed_data/content_split.txt"
+
+    # 第一次运行时
+    train = constract_train(train_file, save_file)
+
+    dictionary = corpora.Dictionary(train)
+    print(dictionary)
+    corpus = [dictionary.doc2bow(text) for text in train]
+    print(corpus)
+    exit()
+
+    lda = LdaModel(corpus=corpus, id2word=dictionary, num_topics=5, passes=20)
+
+    #lda输出说明
+
 
 if __name__ == "__main__":
 
-    save_file = "./result/topic.txt"
-    lda_main(save_file)
+    # save_file = "./result/topic.txt"
+    # lda_main(save_file)
+
+    lda_model_test()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
