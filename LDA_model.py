@@ -13,9 +13,7 @@ def constract_train(train_file,save_file):
     :param train_file: 文档训练数据
     :return:
     '''
-
     train = []
-
     #判断文件是否存在
     if os.path.exists(save_file):
         #直接读取
@@ -60,7 +58,6 @@ def constract_train(train_file,save_file):
                 # print(train)
                 # exit()
                 line = f.readline().strip()
-
         f.close()
     wf.close()
 
