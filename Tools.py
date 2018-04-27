@@ -45,6 +45,34 @@ def ExtractTitle(file_path_arr,save_name):
 
     wf.close()
 
+def ExtractContent(file_path_arr,save_name):
+    '''
+    :param file_path_arr: 所有文件相对路径数组
+    :param save_name: 保存title的文件
+    :return: None
+    '''
+    with open(save_name,'w',encoding='utf-8') as wf:
+
+        for file_name in file_path_arr:
+
+            with open(file_name,'r',encoding='utf-8') as f:
+
+                lines = f.readlines()
+
+            f.close()
+
+            strip_lines = [line.strip() for line in lines]
+
+            #写入文件
+            wf.write(file_name)
+            for line in strip_lines:
+                wf.write(","+line)
+
+            wf.write("\n")
+
+    wf.close()
+
+
 # 创建停用词list
 def stopwordslist(filepath):
     stopwords = [line.strip() for line in open(filepath, 'r', encoding='utf-8').readlines()]
@@ -97,5 +125,12 @@ if __name__ == "__main__":
 #demo for split word
     splited_sen = sentence_split("你好，胡安娜发电机房就饿哦积分")
     print(splited_sen)
+
+
+#demo for extract content
+    # data_dir = "./data/init_data/"
+    # file_path_arr = Get_File_Name(data_dir)
+    # save_path = "./data/processed_data/content.txt"
+    # ExtractContent(file_path_arr,save_path)
 
 
