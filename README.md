@@ -38,7 +38,8 @@
                 save_path = "./data/processed_data/content.txt"
                 ExtractContent(file_path_arr,save_path)
 
-    3.运行LDA_model.py文件，生成 ./result/topic.txt [若context_split.txt不存在，会对context.txt数据进行预处理，并生成context_split.txt]
+    3.运行LDA_model.py文件，生成 ./result/topic.txt [若context_split.txt不存在，会对context.txt数据进行预处理，
+        并生成context_split.txt]
 
         [若更新了context.txt文本数据文件，需要手动将context_split.txt文件先删除]
 
