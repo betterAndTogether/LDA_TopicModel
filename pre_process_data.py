@@ -13,9 +13,7 @@ def split_word(filename,save_file):
     #read file
     with open(save_file,'w',encoding='utf-8') as wf:
         with open(filename,'r',encoding='utf-8') as f:
-
             line = f.readline().strip()
-
             while line:
 
                 #分词

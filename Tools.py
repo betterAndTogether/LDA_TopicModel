@@ -123,14 +123,14 @@ if __name__ == "__main__":
 
 
 #demo for split word
-    splited_sen = sentence_split("你好，胡安娜发电机房就饿哦积分")
-    print(splited_sen)
+    # splited_sen = sentence_split("你好，胡安娜发电机房就饿哦积分")
+    # print(splited_sen)
 
 
 #demo for extract content
-    # data_dir = "./data/init_data/"
-    # file_path_arr = Get_File_Name(data_dir)
-    # save_path = "./data/processed_data/content.txt"
-    # ExtractContent(file_path_arr,save_path)
+    data_dir = "./data/init_data/"
+    file_path_arr = Get_File_Name(data_dir)
+    save_path = "./data/processed_data/content.txt"
+    ExtractContent(file_path_arr,save_path)
 
 
